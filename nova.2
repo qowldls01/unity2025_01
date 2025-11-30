@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+void reverse(char *str) {
+    char *start = str;
+    char *end = str + strlen(str) - 1;
+
+    while (start < end) {
+        char tmp = *start;
+        *start = *end;
+        *end = tmp;
+        start++;
+        end--;
+    }
+}
+
+int main() {
+    char text[100];
+    printf("문자열 입력: ");
+    scanf("%s", text);
+
+    reverse(text);
+    printf("뒤집힌 문자열: %s\n", text);
+
+    return 0;
+}
